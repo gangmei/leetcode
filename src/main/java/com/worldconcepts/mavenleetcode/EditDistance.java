@@ -210,8 +210,6 @@ public class EditDistance {
     }
 
     public int minDistance3(String word1, String word2) {
-        //word1 = word1.trim();
-        //word2 = word2.trim();
         int l1 = word1.length();
         int l2 = word2.length();
         int minDistance = Math.max(l2, l1);
@@ -270,4 +268,35 @@ public class EditDistance {
         }
     }
 
+    public int minDistance5(String word1, String word2) {
+        int l1 = word1.length();
+        int l2 = word2.length();
+
+        ArrayList<int[]> allPairs = new ArrayList<>();
+        for (int i = 0; i < l1; i++) {
+            for (int j = 0; j < l2; j++) {
+                if (word1.charAt(i) == word2.charAt(j)) { // find a new pair
+                    minDistance_util(allPairs, i, j);
+                }
+            }
+        }
+        return minDistance_util(allPairs, l1, l2);
+    }
+
+    private int minDistance_util(ArrayList<int[]> allPairs, int newi, int newj) {
+        int currentMinDistance = Math.max(newi, newj);
+        for (int i = allPairs.size() - 1; i > -1; i--) {
+            int[] newPair = allPairs.get(i);
+            if (newi > newPair[0] && newj > newPair[1]) {
+                if (newi == newPair[0] + 1 && newj == newPair[1] + 1) {
+                    allPairs.remove(i);
+                }
+                if (newPair[2] + Math.max(newi - newPair[0] - 1, newj - newPair[1] - 1) < currentMinDistance) {
+                    currentMinDistance = newPair[2] + Math.max(newi - newPair[0] - 1, newj - newPair[1] - 1);
+                }
+            }
+        }
+        allPairs.add(new int[]{newi, newj, currentMinDistance});
+        return currentMinDistance;
+    }
 }

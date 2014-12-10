@@ -59,7 +59,6 @@ public class EditDistanceTest {
         assertEquals(6, instance.minDistance2("plasma", "altruism"));
     }
 
-    @Ignore
     @Test
     public void testMinDistance3() {
         System.out.println("minDistance3");
@@ -71,12 +70,14 @@ public class EditDistanceTest {
         assertEquals(3, instance.minDistance3("mart", "karma"));
         assertEquals(6, instance.minDistance3("plasma", "altruism"));
         assertEquals(27, instance.minDistance3("pneumonoultramicroscopicsilicovolcanoconiosis", "ultramicroscopically"));
+        assertEquals(2, instance.minDistance5("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdef", "bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefg"));
+
     }
 
     /**
      * Test of minDistance4 method, of class EditDistance.
      */
-    //@Ignore
+    @Ignore
     @Test
     public void testMinDistance4() {
         System.out.println("minDistance4");
@@ -88,6 +89,24 @@ public class EditDistanceTest {
          assertEquals(3, instance.minDistance4("mart", "karma"));
          assertEquals(6, instance.minDistance4("plasma", "altruism"));*/
         assertEquals(27, instance.minDistance4("pneumonoultramicroscopicsilicovolcanoconiosis", "ultramicroscopically"));
+    }
+
+    /**
+     * Test of minDistance5 method, of class EditDistance.
+     */
+    @Test
+    public void testMinDistance5() {
+        System.out.println("minDistance5");
+        EditDistance instance = new EditDistance();
+        assertEquals(6, instance.minDistance5("abcwwmn", "wefw"));
+        assertEquals(2, instance.minDistance5("ab", "bc"));
+        assertEquals(2, instance.minDistance5("sea", "eat"));
+        assertEquals(3, instance.minDistance5("horse", "ros"));
+        assertEquals(3, instance.minDistance5("mart", "karma"));
+        assertEquals(6, instance.minDistance5("plasma", "altruism"));
+        assertEquals(27, instance.minDistance5("pneumonoultramicroscopicsilicovolcanoconiosis", "ultramicroscopically"));
+        assertEquals(2, instance.minDistance5("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdef", "bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefg"));
+
     }
 
 }
